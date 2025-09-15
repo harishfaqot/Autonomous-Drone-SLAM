@@ -7,47 +7,16 @@ The setup combines Livox LiDAR, MAVROS, and a custom drone package for SLAM.
 ---
 
 ## System Architecture
-
-```text
-         +-------------------+
-         |   Flight Control  |
-         |   (Pixhawk/FCU)   |
-         +---------+---------+
-                   |
-                   | Serial (fcu_url)
-                   v
-             +-----------+
-             |  MAVROS   |
-             +-----------+
-                   |
-                   v
-   +---------------+---------------+
-   |                               |
-   v                               v
-Fast-LIO (SLAM)             Ground Control Station (GCS)
-   |                                   (UDP link)
-   v
-+---------+
-|  Map /  |
-|  Odometry|
-+---------+
-
-+------------------+
-| Livox MID360 LiDAR|
-+------------------+
-          |
-          v
-+-------------------+
-| Livox ROS Driver  |
-+-------------------+
-          |
-          v
-      Fast-LIO
-```
+![System Architecture](docs/system.png)
 
 This shows how LiDAR data flows through the Livox ROS Driver into Fast-LIO for SLAM, while MAVROS bridges the flight controller and ground control station.
 
-![System Architecture](docs/hardware.png)
+![Hardware Architecture](docs/hardware.png)
+
+List of hardware used:
+1. Jetson Xavier NX
+2. Livox MID 460
+3. Pixhawk Cube
 
 ---
 
