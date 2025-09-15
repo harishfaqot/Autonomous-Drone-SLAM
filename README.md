@@ -63,6 +63,29 @@ cd ws_livox/src/livox_ros_driver2
 ./build.sh ROS1
 ```
 
+#### Configure Livox MID360
+Edit the configuration file:
+
+```bash
+nano ws_livox/src/livox_ros_driver2/config/MID360_config.json
+```
+
+Update the IP addresses as follows:
+
+```json
+{
+    "host_net_info" : {
+        "host_ip" : "192.168.1.5",
+        "lidar_ip" : "192.168.1.12"
+    }
+}
+```
+
+- Change **192.168.1.5** to your **computer’s IP address**.  
+- Change **192.168.1.12** to your **Livox MID360 LiDAR IP address**.  
+
+Save the file and restart the driver.
+
 ### 3. Build Fast-LIO SLAM
 ```bash
 cd fastlio_ws
