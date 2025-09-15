@@ -4,6 +4,11 @@ This repository is designed to run on **ROS Noetic with Ubuntu 20.04**.
 It has been tested on **Jetson Xavier** and **Jetson Orin Nano**.  
 The setup combines Livox LiDAR, MAVROS, and a custom drone package for SLAM.
 
+## List of hardware used:
+1. Jetson Xavier NX
+2. Livox MID 460
+3. Pixhawk Cube
+
 ---
 
 ## System Architecture
@@ -12,11 +17,6 @@ The setup combines Livox LiDAR, MAVROS, and a custom drone package for SLAM.
 This shows how LiDAR data flows through the Livox ROS Driver into Fast-LIO for SLAM, while MAVROS bridges the flight controller and ground control station.
 
 ![Hardware Architecture](docs/hardware.png)
-
-List of hardware used:
-1. Jetson Xavier NX
-2. Livox MID 460
-3. Pixhawk Cube
 
 ---
 
