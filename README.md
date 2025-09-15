@@ -47,6 +47,8 @@ Fast-LIO (SLAM)             Ground Control Station (GCS)
 
 This shows how LiDAR data flows through the Livox ROS Driver into Fast-LIO for SLAM, while MAVROS bridges the flight controller and ground control station.
 
+![System Architecture](docs/hardware.png)
+
 ---
 
 ## Setup Instructions
@@ -133,13 +135,4 @@ roslaunch mavros apm.launch fcu_url:=/dev/ttyACM0:115200 gcs_url:=udp://@0.0.0.0
 - Make sure your ROS workspaces are properly sourced before launching.  
 - Adjust the `fcu_url` and `gcs_url` parameters according to your hardware setup.  
 - This setup is mainly intended for drones equipped with the **Livox MID360 LiDAR**.  
-
-```mermaid
-flowchart TD
-    A[Flight Controller (Pixhawk/FCU)] -->|Serial fcu_url| B[MAVROS]
-    B --> C[Fast-LIO (SLAM)]
-    B --> D[Ground Control Station (UDP)]
-    E[Livox MID360 LiDAR] --> F[Livox ROS Driver]
-    F --> C
-    C --> G[Map / Odometry]
 
