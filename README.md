@@ -78,8 +78,6 @@ catkin_make
 ```
 
 ---
-
----
 ## Permanent Workspace Sourcing
 
 To avoid sourcing the workspace manually each time, add these lines to your .bashrc:
