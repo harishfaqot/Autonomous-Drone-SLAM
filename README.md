@@ -79,6 +79,19 @@ catkin_make
 
 ---
 
+---
+## Permanent Workspace Sourcing
+
+To avoid sourcing the workspace manually each time, add these lines to your .bashrc:
+```
+echo "source ~/Autonomous-Drone-SLAM/ws_livox/devel/setup.bash" >> ~/.bashrc
+
+echo "source ~/Autonomous-Drone-SLAM/fastlio_ws/devel/setup.bash" >> ~/.bashrc
+
+echo "source ~/Autonomous-Drone-SLAM/drone_ws/devel/setup.bash" >> ~/.bashrc
+```
+---
+
 ## Running the System
 
 After building all packages, you can start the system with the following commands in separate terminals:
@@ -90,7 +103,7 @@ roslaunch fast_lio mapping_mid360.launch
 
 ### Start Livox ROS Driver
 ```bash
-roslaunch livox_ros_driver msg_MID360.launch
+roslaunch livox_ros_driver2 msg_MID360.launch
 ```
 
 ### Start MAVROS with flight controller and GCS
